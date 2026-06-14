@@ -12,13 +12,14 @@ authors=[
 ]
 requires-python=">=3.11"
 dependencies = [
-    "ipykernel",
     "pandas",
     "polars",
     "seaborn",
     "matplotlib",
     "configargparse",
-    "psutil"
+    "psutil",
+    "jupyterlab",
+    "coloredlogs>=15.0.1",
 ]
 [tool.setuptools.packages.find]
 where = ["." ]
@@ -27,6 +28,8 @@ exclude = ["tests*", "docs*", "notebooks*"]
 [dependency-groups]
 dev = [
     "coverage>=7.14.1",
+    "faker>=40.23.0",
+    "ipykernel>=7.3.0",
     "mypy>=2.1.0",
     "pytest>=9.1.0",
     "pytest-cov>=7.1.0",

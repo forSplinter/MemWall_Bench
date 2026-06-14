@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memory-wall"
+version = "1.0.0"
+description = ""
+readme={file = "README.md", content-type="text/markdown"}
+authors=[
+    {name="Mathys Muganga", email = "rassou.muganga@gmail.com"}
+]
+requires-python=">=3.11"
+dependencies = [
+    "ipykernel",
+    "pandas",
+    "polars",
+    "seaborn",
+    "matplotlib",
+    "configargparse",
+    "psutil"
+]
+[tool.setuptools.packages.find]
+where = ["." ]
+exclude = ["tests*", "docs*", "notebooks*"]
+
+[dependency-groups]
+dev = [
+    "coverage>=7.14.1",
+    "mypy>=2.1.0",
+    "pytest>=9.1.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.17",
+]
